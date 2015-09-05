@@ -1,5 +1,5 @@
 {{-- Navigation --}}
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+<nav class="navbar navbar-default navbar-custom" data-0="position:static;" data-50-top="position:fixed;top:0;" data-edge-strategy="set">
     <div class="container-fluid">
         {{-- Drand and Toggle Grouped for mobile display--}}
         <div class="navbar-header page-scroll">

@@ -49,7 +49,7 @@
                         </form>
                     </div>
                     <div>
-                        <a href={{ route('auth.password.email') }}"></a>
+                        <a href={{ url('password/email') }}"></a>
                     </div>
                 </div>
             </div>

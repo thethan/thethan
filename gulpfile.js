@@ -95,6 +95,9 @@ gulp.task("copyfiles", function(){
    gulp.src("vendor/bower_dl/clean-blog/less/**")
        .pipe(gulp.dest("resources/assets/less/clean-blog/"));
 
+    gulp.src("vendor/bower_dl/skrollr/dist/*")
+        .pipe(gulp.dest("resources/assets/js/skrollr/"));
+
 });
 
 elixir(function(mix) {
@@ -104,6 +107,7 @@ elixir(function(mix) {
         .scripts([
             'js/jquery.js',
             'js/bootstrap.js',
+            'js/skrollr/skrollr.min.js',
             'js/blog.js'
             ],
             'public/assets/js/blog.js',
@@ -117,7 +121,10 @@ elixir(function(mix) {
             'public/assets/js/admin.js',
             'resources//assets'
         )
-        .less('blog.less', 'public/assets/css/blog.css')
+        .less(
+            'blog.less',
+            'public/assets/css/blog.css'
+        )
         .version(['public/assets/css/blog.css','public/css/app.css','public/assets/js/blog.js']);
 
 

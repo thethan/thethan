@@ -18,5 +18,8 @@
     "selectize": "~0.12.1",
     "pickadate": "~3.5.6",
     "clean-blog": "~1.0.1"
+  },
+  "devDependencies": {
+    "skrollr": "~0.6.30"
   }
 }
