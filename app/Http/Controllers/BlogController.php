@@ -18,7 +18,6 @@ class BlogController extends Controller
     //
     public function index(Request $request)
     {
-        var_dump('asdfajshfashf');
         $tag = $request->get('tag');
         $data = $this->dispatch(new BlogIndexData($tag));
 
