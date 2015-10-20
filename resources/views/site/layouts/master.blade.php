@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="{{ elixir('assets/css/blog.css') }}">
     @yield('styles')
     <style>
-
+        #slide-1 .bcg {
+            /*background-image: none;*/
+        }
     </style>
     {{-- HTML5 SHim and Respond.js for IE8 Support --}}
     <!--[if lt IE 9]>
@@ -31,19 +33,22 @@
 {{--@include('blog.partials.page-footer')--}}
 
 <main>
-    <section id="slide-1" class="row ">
-        <div class="bcg homeSlide"
+    <section id="slide-1" class="container bcg"
+             style="background: url(/assets/img/homepage.jpg); position: relative;"
+             data-top="background-position: 50% -50px; top:0px;"
+             data-top-bottom="background-position: 50% -369px; top:85px;"
+            >
+        <div class=" homeSlide"
              data-top="background-position: 50% -50px;"
-             data-top-bottom="background-position: 50% -286px;"
+             data-top-bottom=""
              data-anchor-target="#slide-1">
         </div>
     </section>
     <div id="slide-2" style="position:relative;">
-
         <nav class="navbar navbar-default" id="nav"
              style="margin-top: 0px;z-index: 200; "
-             data-0="position:fixed; top:80%;background: aquamarine;"
-             data-150-top="top:20%; background:green;"
+             data-0="position:fixed; top:80%;"
+             data-150-top="top:20%;"
              data-edge-strategy="set"
              data-anchor-target="#slide-2">
             <div class="container-fluid">
@@ -60,7 +65,7 @@
                     </button>
                     <a class="navbar-brand" href="#"
                        style="position: absolute;"
-                       data-700-top="position:fixed; top:500px;"
+                       data-700-top="position:fixed; top:400px;"
                             {{--data-151-top="position:absolute; top:151px;"--}}
                        data-150-top="position:fixed;top:150px"
                        data-anchor-target="#slide-2 #nav">{{ $title }}</a>
@@ -79,18 +84,30 @@
             </div>
             <!-- /.container-fluid -->
         </nav>
+
         <!--placeholder div to prevent jumpy content when nav gets pinned-->
-        <div style=""
-             data-0="display:block;height:30em;background: tan;top:-13em; position: relative; z-index:15;"
-             data-40p-top="display:none;top:-1em"
-             data-anchor-target="#nav"
-             data-edge-strategy="set">&nbsp;</div>
+        {{--<div style=""--}}
+             {{--data-0="display:block;height:30em;background: tan;top:-13em; position: relative; z-index:15;"--}}
+             {{--data-40p-top="display:none;top:-1em"--}}
+             {{--data-anchor-target="#nav"--}}
+             {{--data-edge-strategy="set">&nbsp;</div>--}}
 
     </div>
         <div id="slide-3" style="min-height: 600px;">
-            <div data-0="background-color:rgb(1,27,59);position:relative;padding-top:15em; min-height:13em;"
+            <div class="hidden-sm hidden-xs"
+                 data-0="position:relative;padding-top:2em;"
                  data-50p-top="top:.5em;"
-                 data-top="background-color:(0,0,0);"  data-anchor-target="#slide-3">
+                 data-top="" data-anchor-target="#slide-3">
+                <div class="hsContainer">
+                    <div class="hsContent">
+                        <h4 class="md-hidden"
+                            data-center="opacity: 0; padding:1em;" data--200-bottom="opacity: 1" data-206-top="opacity: 0; " data-106-top="opacity: 0" data-anchor-target="#slide-3 h2"> Scroll Down For More</h4>
+                    </div>
+                </div>
+            </div>
+            <div data-0="position:relative;padding-top:15em; min-height:13em;"
+                 data-50p-top="top:.5em;"
+                 data-top=""  data-anchor-target="#slide-3">
                 <div class="hsContainer">
                     <div class="hsContent">
                         <h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1; " data-106-top="opacity: 0" data-anchor-target="#slide-3 h2">Fade me in and out</h2>
@@ -106,6 +123,7 @@
 {{-- Scripts --}}
 <script src="{{ elixir('assets/js/blog.js') }}"></script>
 @yield('scripts')
+
 <script type="text/javascript">
 //    var io = this.io ^= 1;
 //    $('body').css({overflowY: io ? 'scroll' : 'hidden'});
@@ -125,6 +143,9 @@ $('#slide-2').width(docWidth);
 var body_height = $('body').height();
 console.log(body_height);
 
+imagesLoaded(document.querySelector('#slide-1'), function(){
+    console.log('all images loaded');
+});
 
 window.onresize = function (event) {
     var h = window.innerHeight;
@@ -134,6 +155,7 @@ window.onresize = function (event) {
     $('#slide-3').width(docWidth);
     if (docWidth <= 760) {
         skrollr.init().destroy();
+        $('#nav').addClass(' navbar-fixed-top');
 //        $('#slide_3').width(docWidth);
 //        $('#slide-1').css({
 //            'position': 'fixed',
@@ -171,17 +193,13 @@ function sizing() {
 //        $('#slide-2').css({'position': 'static', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});
 //        $('#slide-2 #nav').css({'position': 'static', 'top': '0px'});
 //        $('#slide-3').css({'opacity': 1});
-//        $('#slide-1 .bcg').css({'background': "url(/assets/img/homepage.jpg) center center 100%"});
-//        $('h5').css({'display': 'none'});
-//        $('#slide-3 .bcg').css({'opacity': 1});
+        $('#slide-1').css({'background': "url(/assets/img/homepage.jpg) center center 100%"});
     }
     else {
         skrollr.init({
                 forceHeight: false
-                }
+            }
         );
-        $body = $('body');
-        console.log($body);
 
     }
 
@@ -197,9 +215,8 @@ console.log(h *.8);
 
 </script>
 <script src="{{asset('/assets/js/imageloaded.js')}}"></script>
-<script src="{{ asset('/assets/js/_main.js') }}">
+<script src="{{ asset('/assets/js/main.js') }}"></script>
 
-</script>
 
 </body>
 </html>
