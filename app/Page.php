@@ -8,6 +8,9 @@ use Carbon\Carbon;
 
 class Page extends Model
 {
+    /**
+     * @var array
+     */
     protected $dates = ['published_at'];
 
     protected $fillable = ['title', 'subtitle', 'content_raw','category_id', 'meta_description', 'layout', 'is_draft', 'page_image','published_at'];
