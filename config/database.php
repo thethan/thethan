@@ -26,8 +26,7 @@ return [
     |
     */
 
-    //'default' => env('DB_CONNECTION', 'sqlite'),
-    'default' =>  'sqlite',
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -49,7 +48,7 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => storage_path('zach.sqlite'),
+            'database' => storage_path('database.sqlite'),
             'prefix'   => '',
         ],
 
@@ -61,7 +60,7 @@ return [
             'password'  => env('DB_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => 'zach_',
+            'prefix'    => '',
             'strict'    => false,
         ],
 
@@ -83,7 +82,7 @@ return [
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
-            'prefix'   => 'zach_',
+            'prefix'   => '',
         ],
 
     ],
