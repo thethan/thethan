@@ -55,7 +55,7 @@ $factory->define(App\Category::class, function($faker){
     $images = ['about-bg.jpg'];
     $word = $faker->word;
     return [
-        'category' => $word,
+        'category' => str_random(10),
         'title' => ucfirst($word),
         'subtitle' => $faker->sentence,
         'page_image' =>  $images[0],

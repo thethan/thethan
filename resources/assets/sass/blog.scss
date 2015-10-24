@@ -3,6 +3,9 @@
 @import "clean-blog/clean-blog";
 @import "//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic";
 
+body {
+  overflow-x: hidden;
+}
 
 .intro-header .post-heading .meta a, article a {
   text-decoration:underline;
@@ -38,4 +41,10 @@ dt {
 dd {
   margin-left: 30px;
   margin-bottom: 10px;
+}
+
+#nav {
+  -webkit-border-radius: 0px;
+  -moz-border-radius:  0px;
+  border-radius:  0px;
 }

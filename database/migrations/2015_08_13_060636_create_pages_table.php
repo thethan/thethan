@@ -22,9 +22,9 @@ class CreatePagesTable extends Migration
             $table->integer('category_id')->nullable();
             $table->boolean('is_draft');
             $table->string('meta_description');
-            $table->timestamp('published_at')->index();
-            $table->text('content_html');
-            $table->text('content_raw');
+            $table->timestamp('published_at')->index()->nullableTimestamp();
+            $table->text('content_html')->nullable();
+            $table->text('content_raw')->nullable();
             $table->timestamps();
         });
     }

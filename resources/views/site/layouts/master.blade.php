@@ -9,108 +9,214 @@
 
     <title>{{ $title or config('blog.title') }}</title>
     {{-- Styles--}}
+
     <link rel="stylesheet" href="{{ elixir('assets/css/blog.css') }}">
     @yield('styles')
-
+    <style>
+        #slide-1 .bcg {
+            /*background-image: none;*/
+        }
+    </style>
     {{-- HTML5 SHim and Respond.js for IE8 Support --}}
     <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="/assets/js/imageLoaded.js"></script>
 </head>
-<body>
-    {{--@include('blog.partials.page-nav')--}}
+<body onload="sizing()" >
+{{--@include('blog.partials.page-nav')--}}
 
-    {{--@yield('page-header')--}}
-    {{--@yield('content')--}}
+{{--@yield('page-header')--}}
+{{--@yield('content')--}}
 
-    {{--@include('blog.partials.page-footer')--}}
+{{--@include('blog.partials.page-footer')--}}
 
-    <div id="skrollr-body">
-        <div id="content">
-            <div>
-                <h1>Fixed nav (desktop only!)</h1>
+<main>
+    <section id="slide-1" class="container bcg"
+             style="background: url(/assets/img/homepage.jpg); position: relative;"
+             data-top="background-position: 50% -50px; top:0px;"
+             data-top-bottom="background-position: 50% -369px; top:85px;"
+            >
+        <div class=" homeSlide"
+             data-top="background-position: 50% -50px;"
+             data-top-bottom=""
+             data-anchor-target="#slide-1">
+        </div>
+    </section>
+    <div id="slide-2" style="position:relative;">
+        <nav class="navbar navbar-default" id="nav"
+             style="margin-top: 0px;z-index: 200; "
+             data-0="position:fixed; top:80%;"
+             data-150-top="top:20%;"
+             data-edge-strategy="set"
+             data-anchor-target="#slide-2">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"
+                       style="position: absolute;"
+                       data-700-top="position:fixed; top:400px;"
+                            {{--data-151-top="position:absolute; top:151px;"--}}
+                       data-150-top="position:fixed;top:150px"
+                       data-anchor-target="#slide-2 #nav">{{ $title }}</a>
+                </div>
 
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
 
+        <!--placeholder div to prevent jumpy content when nav gets pinned-->
+        {{--<div style=""--}}
+             {{--data-0="display:block;height:30em;background: tan;top:-13em; position: relative; z-index:15;"--}}
+             {{--data-40p-top="display:none;top:-1em"--}}
+             {{--data-anchor-target="#nav"--}}
+             {{--data-edge-strategy="set">&nbsp;</div>--}}
 
-                <ul id="nav" data-0="position:static;" data-50-top="position:fixed;top:0;" data-edge-strategy="set">
-                    <li>foo</li>
-                    <li>bar</li>
-                </ul>
-                <!--placeholder div to prevent jumpy content when nav gets pinned-->
-                <div style="padding:1em;" data-0="display:none;" data-top-top="display:block;" data-anchor-target="#nav" data-edge-strategy="set">&nbsp;</div>
-
-
-
-                <p>
-                    <strong>Scroll down to see the nav getting fixed.</strong>
-                </p>
-
-                <p>Biltong pastrami kielbasa short ribs, turducken shoulder pork chop boudin ground round speck cow. Fatback leberkas shank hamburger, tail pork belly tongue bresaola short ribs corned beef speck tri-tip ribeye. Filet mignon shoulder speck pastrami. Ham hock turducken corned beef shankle. Meatloaf shankle sausage boudin, shank flank turducken tenderloin pancetta ball tip. Biltong boudin jowl drumstick pig.</p>
-
-                <p>Sirloin venison bresaola andouille pastrami short ribs. Short loin cow capicola tail ham hock leberkas. Frankfurter meatloaf capicola, swine ball tip jerky pork loin pork belly cow ribeye brisket strip steak jowl beef ribs ham hock. Pastrami ham hock rump turkey, pork belly capicola jerky. Turkey chuck beef, bresaola filet mignon jerky tri-tip pastrami. Bacon capicola jowl fatback short ribs. Speck shankle bacon chuck.</p>
-
-                <p>Pork loin tail pork belly shank ham. Kielbasa venison ham, short loin ham hock beef ribs tri-tip ball tip pork belly. Ribeye sirloin sausage tenderloin hamburger. Strip steak tongue turkey, andouille bacon beef ribs venison. T-bone ball tip bresaola fatback, ground round meatball chicken sausage tongue pork chop leberkas sirloin jerky shank bacon. Turducken sirloin cow shankle pig, leberkas venison boudin pastrami.</p>
-
-                <p>Cow fatback short loin, hamburger speck jowl turducken capicola ham hock. Hamburger corned beef strip steak shank filet mignon, jerky capicola chicken jowl ribeye pork ham hock ground round bresaola. Jowl ribeye kielbasa drumstick pork belly leberkas. Spare ribs fatback shankle, hamburger meatloaf sausage pork loin andouille pork kielbasa. Pancetta shank tongue, leberkas turducken shoulder rump meatball pork belly pig hamburger brisket biltong. Tenderloin short ribs pig, rump tail chuck turducken.</p>
-
-                <p>Cow tri-tip pork loin salami corned beef. T-bone turkey ham frankfurter, brisket cow chicken bacon rump sirloin. Pancetta ribeye salami leberkas speck shank. Ribeye prosciutto swine venison speck beef.</p>
-
-                <p>Biltong pastrami kielbasa short ribs, turducken shoulder pork chop boudin ground round speck cow. Fatback leberkas shank hamburger, tail pork belly tongue bresaola short ribs corned beef speck tri-tip ribeye. Filet mignon shoulder speck pastrami. Ham hock turducken corned beef shankle. Meatloaf shankle sausage boudin, shank flank turducken tenderloin pancetta ball tip. Biltong boudin jowl drumstick pig.</p>
-
-                <p>Sirloin venison bresaola andouille pastrami short ribs. Short loin cow capicola tail ham hock leberkas. Frankfurter meatloaf capicola, swine ball tip jerky pork loin pork belly cow ribeye brisket strip steak jowl beef ribs ham hock. Pastrami ham hock rump turkey, pork belly capicola jerky. Turkey chuck beef, bresaola filet mignon jerky tri-tip pastrami. Bacon capicola jowl fatback short ribs. Speck shankle bacon chuck.</p>
-
-                <p>Pork loin tail pork belly shank ham. Kielbasa venison ham, short loin ham hock beef ribs tri-tip ball tip pork belly. Ribeye sirloin sausage tenderloin hamburger. Strip steak tongue turkey, andouille bacon beef ribs venison. T-bone ball tip bresaola fatback, ground round meatball chicken sausage tongue pork chop leberkas sirloin jerky shank bacon. Turducken sirloin cow shankle pig, leberkas venison boudin pastrami.</p>
-
-                <p>Cow fatback short loin, hamburger speck jowl turducken capicola ham hock. Hamburger corned beef strip steak shank filet mignon, jerky capicola chicken jowl ribeye pork ham hock ground round bresaola. Jowl ribeye kielbasa drumstick pork belly leberkas. Spare ribs fatback shankle, hamburger meatloaf sausage pork loin andouille pork kielbasa. Pancetta shank tongue, leberkas turducken shoulder rump meatball pork belly pig hamburger brisket biltong. Tenderloin short ribs pig, rump tail chuck turducken.</p>
-
-                <p>Cow tri-tip pork loin salami corned beef. T-bone turkey ham frankfurter, brisket cow chicken bacon rump sirloin. Pancetta ribeye salami leberkas speck shank. Ribeye prosciutto swine venison speck beef.</p>
-
-                <p>Biltong pastrami kielbasa short ribs, turducken shoulder pork chop boudin ground round speck cow. Fatback leberkas shank hamburger, tail pork belly tongue bresaola short ribs corned beef speck tri-tip ribeye. Filet mignon shoulder speck pastrami. Ham hock turducken corned beef shankle. Meatloaf shankle sausage boudin, shank flank turducken tenderloin pancetta ball tip. Biltong boudin jowl drumstick pig.</p>
-
-                <p>Sirloin venison bresaola andouille pastrami short ribs. Short loin cow capicola tail ham hock leberkas. Frankfurter meatloaf capicola, swine ball tip jerky pork loin pork belly cow ribeye brisket strip steak jowl beef ribs ham hock. Pastrami ham hock rump turkey, pork belly capicola jerky. Turkey chuck beef, bresaola filet mignon jerky tri-tip pastrami. Bacon capicola jowl fatback short ribs. Speck shankle bacon chuck.</p>
-
-                <p>Sirloin venison bresaola andouille pastrami short ribs. Short loin cow capicola tail ham hock leberkas. Frankfurter meatloaf capicola, swine ball tip jerky pork loin pork belly cow ribeye brisket strip steak jowl beef ribs ham hock. Pastrami ham hock rump turkey, pork belly capicola jerky. Turkey chuck beef, bresaola filet mignon jerky tri-tip pastrami. Bacon capicola jowl fatback short ribs. Speck shankle bacon chuck.</p>
-
-                <p>Pork loin tail pork belly shank ham. Kielbasa venison ham, short loin ham hock beef ribs tri-tip ball tip pork belly. Ribeye sirloin sausage tenderloin hamburger. Strip steak tongue turkey, andouille bacon beef ribs venison. T-bone ball tip bresaola fatback, ground round meatball chicken sausage tongue pork chop leberkas sirloin jerky shank bacon. Turducken sirloin cow shankle pig, leberkas venison boudin pastrami.</p>
-
-                <p>Cow fatback short loin, hamburger speck jowl turducken capicola ham hock. Hamburger corned beef strip steak shank filet mignon, jerky capicola chicken jowl ribeye pork ham hock ground round bresaola. Jowl ribeye kielbasa drumstick pork belly leberkas. Spare ribs fatback shankle, hamburger meatloaf sausage pork loin andouille pork kielbasa. Pancetta shank tongue, leberkas turducken shoulder rump meatball pork belly pig hamburger brisket biltong. Tenderloin short ribs pig, rump tail chuck turducken.</p>
-
-                <p>Cow tri-tip pork loin salami corned beef. T-bone turkey ham frankfurter, brisket cow chicken bacon rump sirloin. Pancetta ribeye salami leberkas speck shank. Ribeye prosciutto swine venison speck beef.</p>
-
-                <p>Biltong pastrami kielbasa short ribs, turducken shoulder pork chop boudin ground round speck cow. Fatback leberkas shank hamburger, tail pork belly tongue bresaola short ribs corned beef speck tri-tip ribeye. Filet mignon shoulder speck pastrami. Ham hock turducken corned beef shankle. Meatloaf shankle sausage boudin, shank flank turducken tenderloin pancetta ball tip. Biltong boudin jowl drumstick pig.</p>
-
-                <p>Sirloin venison bresaola andouille pastrami short ribs. Short loin cow capicola tail ham hock leberkas. Frankfurter meatloaf capicola, swine ball tip jerky pork loin pork belly cow ribeye brisket strip steak jowl beef ribs ham hock. Pastrami ham hock rump turkey, pork belly capicola jerky. Turkey chuck beef, bresaola filet mignon jerky tri-tip pastrami. Bacon capicola jowl fatback short ribs. Speck shankle bacon chuck.</p>
-
-                <p>Pork loin tail pork belly shank ham. Kielbasa venison ham, short loin ham hock beef ribs tri-tip ball tip pork belly. Ribeye sirloin sausage tenderloin hamburger. Strip steak tongue turkey, andouille bacon beef ribs venison. T-bone ball tip bresaola fatback, ground round meatball chicken sausage tongue pork chop leberkas sirloin jerky shank bacon. Turducken sirloin cow shankle pig, leberkas venison boudin pastrami.</p>
-
-                <p>Cow fatback short loin, hamburger speck jowl turducken capicola ham hock. Hamburger corned beef strip steak shank filet mignon, jerky capicola chicken jowl ribeye pork ham hock ground round bresaola. Jowl ribeye kielbasa drumstick pork belly leberkas. Spare ribs fatback shankle, hamburger meatloaf sausage pork loin andouille pork kielbasa. Pancetta shank tongue, leberkas turducken shoulder rump meatball pork belly pig hamburger brisket biltong. Tenderloin short ribs pig, rump tail chuck turducken.</p>
-
-                <p>Cow tri-tip pork loin salami corned beef. T-bone turkey ham frankfurter, brisket cow chicken bacon rump sirloin. Pancetta ribeye salami leberkas speck shank. Ribeye prosciutto swine venison speck beef.</p>
-
-                <p>Biltong pastrami kielbasa short ribs, turducken shoulder pork chop boudin ground round speck cow. Fatback leberkas shank hamburger, tail pork belly tongue bresaola short ribs corned beef speck tri-tip ribeye. Filet mignon shoulder speck pastrami. Ham hock turducken corned beef shankle. Meatloaf shankle sausage boudin, shank flank turducken tenderloin pancetta ball tip. Biltong boudin jowl drumstick pig.</p>
-
-                <p>Sirloin venison bresaola andouille pastrami short ribs. Short loin cow capicola tail ham hock leberkas. Frankfurter meatloaf capicola, swine ball tip jerky pork loin pork belly cow ribeye brisket strip steak jowl beef ribs ham hock. Pastrami ham hock rump turkey, pork belly capicola jerky. Turkey chuck beef, bresaola filet mignon jerky tri-tip pastrami. Bacon capicola jowl fatback short ribs. Speck shankle bacon chuck.</p>
-
-                <p>Pork loin tail pork belly shank ham. Kielbasa venison ham, short loin ham hock beef ribs tri-tip ball tip pork belly. Ribeye sirloin sausage tenderloin hamburger. Strip steak tongue turkey, andouille bacon beef ribs venison. T-bone ball tip bresaola fatback, ground round meatball chicken sausage tongue pork chop leberkas sirloin jerky shank bacon. Turducken sirloin cow shankle pig, leberkas venison boudin pastrami.</p>
-
-                <p>Cow fatback short loin, hamburger speck jowl turducken capicola ham hock. Hamburger corned beef strip steak shank filet mignon, jerky capicola chicken jowl ribeye pork ham hock ground round bresaola. Jowl ribeye kielbasa drumstick pork belly leberkas. Spare ribs fatback shankle, hamburger meatloaf sausage pork loin andouille pork kielbasa. Pancetta shank tongue, leberkas turducken shoulder rump meatball pork belly pig hamburger brisket biltong. Tenderloin short ribs pig, rump tail chuck turducken.</p>
-
-                <p>Cow tri-tip pork loin salami corned beef. T-bone turkey ham frankfurter, brisket cow chicken bacon rump sirloin. Pancetta ribeye salami leberkas speck shank. Ribeye prosciutto swine venison speck beef.</p>
-
-                <p>Biltong pastrami kielbasa short ribs, turducken shoulder pork chop boudin ground round speck cow. Fatback leberkas shank hamburger, tail pork belly tongue bresaola short ribs corned beef speck tri-tip ribeye. Filet mignon shoulder speck pastrami. Ham hock turducken corned beef shankle. Meatloaf shankle sausage boudin, shank flank turducken tenderloin pancetta ball tip. Biltong boudin jowl drumstick pig.</p>
-
-                <p>Sirloin venison bresaola andouille pastrami short ribs. Short loin cow capicola tail ham hock leberkas. Frankfurter meatloaf capicola, swine ball tip jerky pork loin pork belly cow ribeye brisket strip steak jowl beef ribs ham hock. Pastrami ham hock rump turkey, pork belly capicola jerky. Turkey chuck beef, bresaola filet mignon jerky tri-tip pastrami. Bacon capicola jowl fatback short ribs. Speck shankle bacon chuck.</p>
-
-                <p>Pork loin tail pork belly shank ham. Kielbasa venison ham, short loin ham hock beef ribs tri-tip ball tip pork belly. Ribeye sirloin sausage tenderloin hamburger. Strip steak tongue turkey, andouille bacon beef ribs venison. T-bone ball tip bresaola fatback, ground round meatball chicken sausage tongue pork chop leberkas sirloin jerky shank bacon. Turducken sirloin cow shankle pig, leberkas venison boudin pastrami.</p>
-
-                <p>Cow tri-tip pork loin salami corned beef. T-bone turkey ham frankfurter, brisket cow chicken bacon rump sirloin. Pancetta ribeye salami leberkas speck shank. Ribeye prosciutto swine venison speck beef.</p>
+    </div>
+        <div id="slide-3" style="min-height: 600px;">
+            <div class="hidden-sm hidden-xs"
+                 data-0="position:relative;padding-top:2em;"
+                 data-50p-top="top:.5em;"
+                 data-top="" data-anchor-target="#slide-3">
+                <div class="hsContainer">
+                    <div class="hsContent">
+                        <h4 class="md-hidden"
+                            data-center="opacity: 0; padding:1em;" data--200-bottom="opacity: 1" data-206-top="opacity: 0; " data-106-top="opacity: 0" data-anchor-target="#slide-3 h2"> Scroll Down For More</h4>
+                    </div>
+                </div>
+            </div>
+            <div data-0="position:relative;padding-top:15em; min-height:13em;"
+                 data-50p-top="top:.5em;"
+                 data-top=""  data-anchor-target="#slide-3">
+                <div class="hsContainer">
+                    <div class="hsContent">
+                        <h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1; " data-106-top="opacity: 0" data-anchor-target="#slide-3 h2">Fade me in and out</h2>
+                        <p data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-3 h2">Here we are changing the background color from blue to black. Text is fading in at 206 pixels from the bottom and fading out 106 pixels from the top.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+
+</main>
 
 {{-- Scripts --}}
-    <script src="{{ elixir('assets/js/blog.js') }}"></script>
-    @yield('scripts')
+<script src="{{ elixir('assets/js/blog.js') }}"></script>
+@yield('scripts')
+
+<script type="text/javascript">
+//    var io = this.io ^= 1;
+//    $('body').css({overflowY: io ? 'scroll' : 'hidden'});
+//    var h = window.innerHeight;
+//    var w = window.innerWidth;
+//    var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+var io = this.io ^= 1;
+$('body').css({overflowY: io ? 'scroll' : 'hidden'});
+var h = window.innerHeight;
+var w = window.innerWidth;
+var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
+console.log(w);
+console.log(docWidth);
+$('#slide-2').width(docWidth);
+//$('#slide-1 .hsContent').height(h).width(w);
+var body_height = $('body').height();
+console.log(body_height);
+
+imagesLoaded(document.querySelector('#slide-1'), function(){
+    console.log('all images loaded');
+});
+
+window.onresize = function (event) {
+    var h = window.innerHeight;
+    var w = window.innerWidth;
+    var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
+    $('#slide-2').width(docWidth);
+    $('#slide-3').width(docWidth);
+    if (docWidth <= 760) {
+        skrollr.init().destroy();
+        $('#nav').addClass(' navbar-fixed-top');
+//        $('#slide_3').width(docWidth);
+//        $('#slide-1').css({
+//            'position': 'fixed',
+//            'bottom': '0',
+//            'height': '0px'
+//        });
+//        $('#slide-2').css({'position': 'fixed', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});
+//        $('#slide-2 header').css({'position': 'fixed', 'top': '0px'});
+//        $('#slide-3').css({'opacity': 1});
+//        $('#slide-1').css({'position': 'fixed', 'bottom': '0', 'height': '0px'});
+//        $('#slide-2').css({'position': 'fixed', 'bottom': '0'});
+//        $('#slide-3').css({'overflow-x': 'scroll'});
+//        $('#slide-3').css({'opacity': 1});
+    }
+    else {
+        skrollr.init(
+                {forceheight:false}
+        );
+    }
+};
+
+
+function sizing() {
+    console.log(docWidth);
+    if (docWidth <= 760) {
+        skrollr.init().destroy();
+        $('#nav').addClass(' navbar-fixed-top');
+
+//        $('#slide_3').width(docWidth);
+//        $('#slide-1').css({
+//            'position': 'fixed',
+//            'bottom': '0',
+//            'height': '0px'
+//        });
+//        $('#slide-2').css({'position': 'static', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});
+//        $('#slide-2 #nav').css({'position': 'static', 'top': '0px'});
+//        $('#slide-3').css({'opacity': 1});
+        $('#slide-1').css({'background': "url(/assets/img/homepage.jpg) center center 100%"});
+    }
+    else {
+        skrollr.init({
+                forceHeight: false
+            }
+        );
+
+    }
+
+
+}
+console.log(h *.8);
+
+//skrollr.init(
+//        {
+//            forceHeight: false
+//         //edgeStrategy='set'
+//        });
+
+</script>
+<script src="{{asset('/assets/js/imageloaded.js')}}"></script>
+<script src="{{ asset('/assets/js/main.js') }}"></script>
+
+
 </body>
 </html>

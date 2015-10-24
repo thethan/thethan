@@ -6,39 +6,6 @@
 
 @section('styles')
 <style>
-    .skrollable {
-    /*
-    * First-level skrollables are positioned relative to window
-    */
-    position:fixed;
-
-    /*
-    * Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable
-    */
-    z-index:100;
-    }
-
-    .skrollr-mobile .skrollable {
-    /*
-    May cause issues on Android default browser (see #331 on GitHub).
-    */
-    position:absolute;
-    }
-
-    .skrollable .skrollable {
-    /*
-    * Second-level skrollables are positioned relative their parent skrollable
-    */
-    position:absolute;
-    }
-
-    .skrollable .skrollable .skrollable {
-    /*
-    * Third-level (and below) skrollables are positioned static
-    */
-    position:static;
-    }
-    body {font-family:sans-serif;}
 
     #content {
     /*width:960px;*/
@@ -53,8 +20,7 @@
     margin:0;
     width:100%;
     /*width:960px;*/
-    background:#000;
-    color:#eee;
+        background: #f8f8f8;
     }
     h1 {
         height: 80%;
@@ -64,17 +30,14 @@
     padding:1em;
     margin:0;
     }
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+        font-family: gnatfont;
+    }
     </style>
 @endsection
 
 @section('scripts')
-    <script type="text/javascript">
-        window.onload = function() {
-            skrollr.init({
-                forceHeight: false
-            });
-        }
-    </script>
+
 @endsection
 
 @section('page-header')
