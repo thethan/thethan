@@ -1,24 +1,15 @@
-<<<<<<< HEAD
-/*!
- * imagesLoaded PACKAGED v3.1.8
-=======
 /**
  * Created by thethan on 9/5/15.
  */
 /*!
  * imagesLoaded PACKAGED v3.0.4
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
  * JavaScript is all like "You images are done yet or what?"
  * MIT License
  */
 
 
 /*!
-<<<<<<< HEAD
- * EventEmitter v4.2.6 - git.io/ee
-=======
  * EventEmitter v4.2.4 - git.io/ee
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
  * Oliver Caldwell
  * MIT license
  * @preserve
@@ -36,15 +27,9 @@
     function EventEmitter() {}
 
     // Shortcuts to improve speed and size
-<<<<<<< HEAD
-    var proto = EventEmitter.prototype;
-    var exports = this;
-    var originalGlobalValue = exports.EventEmitter;
-=======
 
     // Easy access to the prototype
     var proto = EventEmitter.prototype;
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
 
     /**
      * Finds the index of the listener for the event in it's storage array.
@@ -472,19 +457,6 @@
         return this._events || (this._events = {});
     };
 
-<<<<<<< HEAD
-    /**
-     * Reverts the global {@link EventEmitter} to its previous value and returns a reference to this version.
-     *
-     * @return {Function} Non conflicting EventEmitter class.
-     */
-    EventEmitter.noConflict = function noConflict() {
-        exports.EventEmitter = originalGlobalValue;
-        return EventEmitter;
-    };
-
-=======
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
     // Expose the class either via AMD, CommonJS or the global object
     if (typeof define === 'function' && define.amd) {
         define('eventEmitter/EventEmitter',[],function () {
@@ -500,11 +472,7 @@
 }.call(this));
 
 /*!
-<<<<<<< HEAD
- * eventie v1.0.4
-=======
  * eventie v1.0.3
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
  * event binding helper
  *   eventie.bind( elem, 'click', myFn )
  *   eventie.unbind( elem, 'click', myFn )
@@ -521,16 +489,6 @@
 
     var bind = function() {};
 
-<<<<<<< HEAD
-    function getIEEvent( obj ) {
-        var event = window.event;
-        // add event.target
-        event.target = event.target || event.srcElement || obj;
-        return event;
-    }
-
-=======
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
     if ( docElem.addEventListener ) {
         bind = function( obj, type, fn ) {
             obj.addEventListener( type, fn, false );
@@ -539,13 +497,6 @@
         bind = function( obj, type, fn ) {
             obj[ type + fn ] = fn.handleEvent ?
                 function() {
-<<<<<<< HEAD
-                    var event = getIEEvent( obj );
-                    fn.handleEvent.call( fn, event );
-                } :
-                function() {
-                    var event = getIEEvent( obj );
-=======
                     var event = window.event;
                     // add event.target
                     event.target = event.target || event.srcElement;
@@ -555,7 +506,6 @@
                     var event = window.event;
                     // add event.target
                     event.target = event.target || event.srcElement;
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
                     fn.call( obj, event );
                 };
             obj.attachEvent( "on" + type, obj[ type + fn ] );
@@ -597,57 +547,11 @@
 })( this );
 
 /*!
-<<<<<<< HEAD
- * imagesLoaded v3.1.8
-=======
  * imagesLoaded v3.0.4
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
  * JavaScript is all like "You images are done yet or what?"
  * MIT License
  */
 
-<<<<<<< HEAD
-( function( window, factory ) {
-    // universal module definition
-
-    /*global define: false, module: false, require: false */
-
-    if ( typeof define === 'function' && define.amd ) {
-        // AMD
-        define( [
-            'eventEmitter/EventEmitter',
-            'eventie/eventie'
-        ], function( EventEmitter, eventie ) {
-            return factory( window, EventEmitter, eventie );
-        });
-    } else if ( typeof exports === 'object' ) {
-        // CommonJS
-        module.exports = factory(
-            window,
-            require('wolfy87-eventemitter'),
-            require('eventie')
-        );
-    } else {
-        // browser global
-        window.imagesLoaded = factory(
-            window,
-            window.EventEmitter,
-            window.eventie
-        );
-    }
-
-})( window,
-
-// --------------------------  factory -------------------------- //
-
-    function factory( window, EventEmitter, eventie ) {
-
-
-
-        var $ = window.jQuery;
-        var console = window.console;
-        var hasConsole = typeof console !== 'undefined';
-=======
 ( function( window ) {
 
 
@@ -655,44 +559,10 @@
     var $ = window.jQuery;
     var console = window.console;
     var hasConsole = typeof console !== 'undefined';
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
 
 // -------------------------- helpers -------------------------- //
 
 // extend objects
-<<<<<<< HEAD
-        function extend( a, b ) {
-            for ( var prop in b ) {
-                a[ prop ] = b[ prop ];
-            }
-            return a;
-        }
-
-        var objToString = Object.prototype.toString;
-        function isArray( obj ) {
-            return objToString.call( obj ) === '[object Array]';
-        }
-
-// turn element or nodeList into an array
-        function makeArray( obj ) {
-            var ary = [];
-            if ( isArray( obj ) ) {
-                // use object if already an array
-                ary = obj;
-            } else if ( typeof obj.length === 'number' ) {
-                // convert nodeList to array
-                for ( var i=0, len = obj.length; i < len; i++ ) {
-                    ary.push( obj[i] );
-                }
-            } else {
-                // array of single index
-                ary.push( obj );
-            }
-            return ary;
-        }
-
-        // -------------------------- imagesLoaded -------------------------- //
-=======
     function extend( a, b ) {
         for ( var prop in b ) {
             a[ prop ] = b[ prop ];
@@ -726,7 +596,6 @@
 // --------------------------  -------------------------- //
 
     function defineImagesLoaded( EventEmitter, eventie ) {
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
 
         /**
          * @param {Array, Element, NodeList, String} elem
@@ -785,14 +654,6 @@
                     this.addImage( elem );
                 }
                 // find children
-<<<<<<< HEAD
-                // no non-element nodes, #143
-                var nodeType = elem.nodeType;
-                if ( !nodeType || !( nodeType === 1 || nodeType === 9 || nodeType === 11 ) ) {
-                    continue;
-                }
-=======
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
                 var childElems = elem.querySelectorAll('img');
                 // concat childElems to filterFound array
                 for ( var j=0, jLen = childElems.length; j < jLen; j++ ) {
@@ -847,11 +708,7 @@
             var _this = this;
             setTimeout( function() {
                 _this.emit( 'progress', _this, image );
-<<<<<<< HEAD
-                if ( _this.jqDeferred && _this.jqDeferred.notify ) {
-=======
                 if ( _this.jqDeferred ) {
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
                     _this.jqDeferred.notify( _this, image );
                 }
             });
@@ -884,11 +741,8 @@
 
         // --------------------------  -------------------------- //
 
-<<<<<<< HEAD
-=======
         var cache = {};
 
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
         function LoadingImage( img ) {
             this.img = img;
         }
@@ -897,13 +751,6 @@
 
         LoadingImage.prototype.check = function() {
             // first check cached any previous images that have same src
-<<<<<<< HEAD
-            var resource = cache[ this.img.src ] || new Resource( this.img.src );
-            if ( resource.isConfirmed ) {
-                this.confirm( resource.isLoaded, 'cached was confirmed' );
-                return;
-            }
-=======
             var cached = cache[ this.img.src ];
             if ( cached ) {
                 this.useCached( cached );
@@ -911,7 +758,6 @@
             }
             // add this to cache
             cache[ this.img.src ] = this;
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
 
             // If complete is true and browser supports natural sizes,
             // try to check for image status manually.
@@ -922,18 +768,6 @@
             }
 
             // If none of the checks above matched, simulate loading on detached element.
-<<<<<<< HEAD
-            var _this = this;
-            resource.on( 'confirm', function( resrc, message ) {
-                _this.confirm( resrc.isLoaded, message );
-                return true;
-            });
-
-            resource.check();
-        };
-
-        LoadingImage.prototype.confirm = function( isLoaded, message ) {
-=======
             var proxyImage = this.proxyImage = new Image();
             eventie.bind( proxyImage, 'load', this );
             eventie.bind( proxyImage, 'error', this );
@@ -954,78 +788,18 @@
 
         LoadingImage.prototype.confirm = function( isLoaded, message ) {
             this.isConfirmed = true;
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
             this.isLoaded = isLoaded;
             this.emit( 'confirm', this, message );
         };
 
-<<<<<<< HEAD
-        // -------------------------- Resource -------------------------- //
-
-        // Resource checks each src, only once
-        // separate class from LoadingImage to prevent memory leaks. See #115
-
-        var cache = {};
-
-        function Resource( src ) {
-            this.src = src;
-            // add to cache
-            cache[ src ] = this;
-        }
-
-        Resource.prototype = new EventEmitter();
-
-        Resource.prototype.check = function() {
-            // only trigger checking once
-            if ( this.isChecked ) {
-                return;
-            }
-            // simulate loading on detached element
-            var proxyImage = new Image();
-            eventie.bind( proxyImage, 'load', this );
-            eventie.bind( proxyImage, 'error', this );
-            proxyImage.src = this.src;
-            // set flag
-            this.isChecked = true;
-        };
-
-        // ----- events ----- //
-
-        // trigger specified handler for event type
-        Resource.prototype.handleEvent = function( event ) {
-=======
         // trigger specified handler for event type
         LoadingImage.prototype.handleEvent = function( event ) {
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
             var method = 'on' + event.type;
             if ( this[ method ] ) {
                 this[ method ]( event );
             }
         };
 
-<<<<<<< HEAD
-        Resource.prototype.onload = function( event ) {
-            this.confirm( true, 'onload' );
-            this.unbindProxyEvents( event );
-        };
-
-        Resource.prototype.onerror = function( event ) {
-            this.confirm( false, 'onerror' );
-            this.unbindProxyEvents( event );
-        };
-
-        // ----- confirm ----- //
-
-        Resource.prototype.confirm = function( isLoaded, message ) {
-            this.isConfirmed = true;
-            this.isLoaded = isLoaded;
-            this.emit( 'confirm', this, message );
-        };
-
-        Resource.prototype.unbindProxyEvents = function( event ) {
-            eventie.unbind( event.target, 'load', this );
-            eventie.unbind( event.target, 'error', this );
-=======
         LoadingImage.prototype.onload = function() {
             this.confirm( true, 'onload' );
             this.unbindProxyEvents();
@@ -1039,16 +813,11 @@
         LoadingImage.prototype.unbindProxyEvents = function() {
             eventie.unbind( this.proxyImage, 'load', this );
             eventie.unbind( this.proxyImage, 'error', this );
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
         };
 
         // -----  ----- //
 
         return ImagesLoaded;
-<<<<<<< HEAD
-
-    });
-=======
     }
 
 // -------------------------- transport -------------------------- //
@@ -1069,4 +838,3 @@
     }
 
 })( window );
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
