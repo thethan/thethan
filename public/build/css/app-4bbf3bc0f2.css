@@ -8810,9 +8810,3 @@ div.DTFC_RightBodyWrapper table.dataTable thead .sorting_desc:after {
 div.FixedHeader_Cloned table {
   margin: 0 !important;
 }
-
-#nav {
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-}

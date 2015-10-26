@@ -108,12 +108,10 @@
     var h = window.innerHeight;
     var w = window.innerWidth;
     var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
-    console.log(w);
-    console.log(docWidth);
+
     $('#slide-2').width(docWidth);
     //$('#slide-1 .hsContent').height(h).width(w);
     var body_height = $('body').height();
-    console.log(body_height);
 
 
     window.onresize = function (event) {

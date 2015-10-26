@@ -454,7 +454,6 @@
         return this._events || (this._events = {});
     };
 
-<<<<<<< HEAD
     /**
      * Reverts the global {@link EventEmitter} to its previous value and returns a reference to this version.
      *
@@ -465,8 +464,6 @@
         return EventEmitter;
     };
 
-=======
->>>>>>> 7a6c6bbf772b71d719c2c158f15a12f383ee6522
     // Expose the class either via AMD, CommonJS or the global object
     if (typeof define === 'function' && define.amd) {
         define('eventEmitter/EventEmitter',[],function () {

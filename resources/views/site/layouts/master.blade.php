@@ -22,7 +22,6 @@
     <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="/assets/js/imageLoaded.js"></script>
 </head>
 <body onload="sizing()" >
 {{--@include('blog.partials.page-nav')--}}
@@ -110,8 +109,8 @@
                  data-top=""  data-anchor-target="#slide-3">
                 <div class="hsContainer">
                     <div class="hsContent">
-                        <h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1; " data-106-top="opacity: 0" data-anchor-target="#slide-3 h2">Fade me in and out</h2>
-                        <p data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-3 h2">Here we are changing the background color from blue to black. Text is fading in at 206 pixels from the bottom and fading out 106 pixels from the top.</p>
+                        <h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1; "  data-anchor-target="#slide-3 h2">Master blade</h2>
+                        <p data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-anchor-target="#slide-3 h2">Here we are changing the background color from blue to black. Text is fading in at 206 pixels from the bottom and fading out 106 pixels from the top.</p>
                     </div>
                 </div>
             </div>
@@ -119,6 +118,7 @@
 
 
 </main>
+<script src="/assets/js/imageLoaded.js?v=<?php echo time();?>"></script>
 
 {{-- Scripts --}}
 <script src="{{ elixir('assets/js/blog.js') }}"></script>
@@ -205,7 +205,6 @@ function sizing() {
 
 
 }
-console.log(h *.8);
 
 //skrollr.init(
 //        {
@@ -214,8 +213,7 @@ console.log(h *.8);
 //        });
 
 </script>
-<script src="{{asset('/assets/js/imageloaded.js')}}"></script>
-<script src="{{ asset('/assets/js/main.js') }}"></script>
+<script src="{{ asset('/assets/js/main.js') }}?v=<?php echo time();?>"></script>
 
 
 </body>
