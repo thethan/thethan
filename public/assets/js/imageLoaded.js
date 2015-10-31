@@ -810,7 +810,7 @@
             }
 
             // If none of the checks above matched, simulate loading on detached element.
-<<<<<<< HEAD
+
             var _this = this;
             resource.on( 'confirm', function( resrc, message ) {
                 _this.confirm( resrc.isLoaded, message );

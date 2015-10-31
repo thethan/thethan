@@ -102,88 +102,88 @@
 {{-- Scripts --}}
 <script src="{{ elixir('assets/js/blog.js') }}"></script>
 @yield('scripts')
-<script type="text/javascript">
-    var io = this.io ^= 1;
-    $('body').css({overflowY: io ? 'scroll' : 'hidden'});
-    var h = window.innerHeight;
-    var w = window.innerWidth;
-    var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
+{{--<script type="text/javascript">--}}
+    {{--var io = this.io ^= 1;--}}
+    {{--$('body').css({overflowY: io ? 'scroll' : 'hidden'});--}}
+    {{--var h = window.innerHeight;--}}
+    {{--var w = window.innerWidth;--}}
+    {{--var docWidth = document.documentElement.clientWidth || document.body.clientWidth;--}}
 
-    $('#slide-2').width(docWidth);
-    //$('#slide-1 .hsContent').height(h).width(w);
-    var body_height = $('body').height();
-
-
-    window.onresize = function (event) {
-        var h = window.innerHeight;
-        var w = window.innerWidth;
-        var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
-        $('#slide-2').width(docWidth);
-        $('#slide-3').width(docWidth);
-        if (docWidth <= 760) {
-            skrollr.init().destroy();
-            $('#slide_3').width(docWidth);
-            $('#slide-1').css({
-                'position': 'fixed',
-                'bottom': '0',
-                'height': '0px'
-            });
-            $('#slide-2').css({'position': 'fixed', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});
-            $('#slide-2 header').css({'position': 'fixed', 'top': '0px'});
-            $('#slide-3').css({'opacity': 1});
-            $('#slide-1').css({'position': 'fixed', 'bottom': '0', 'height': '0px'});
-            $('#slide-2').css({'position': 'fixed', 'bottom': '0'});
-            $('#slide-3').css({'overflow-x': 'scroll'});
-            $('#slide-3').css({'opacity': 1});
-        }
-        else {
-            skrollr.init(
-
-            );
-        }
-    };
+    {{--$('#slide-2').width(docWidth);--}}
+    {{--//$('#slide-1 .hsContent').height(h).width(w);--}}
+    {{--var body_height = $('body').height();--}}
 
 
-    function sizing() {
-        console.log(docWidth);
-        if (docWidth <= 760) {
-            skrollr.init().destroy();
+    {{--window.onresize = function (event) {--}}
+        {{--var h = window.innerHeight;--}}
+        {{--var w = window.innerWidth;--}}
+        {{--var docWidth = document.documentElement.clientWidth || document.body.clientWidth;--}}
+        {{--$('#slide-2').width(docWidth);--}}
+        {{--$('#slide-3').width(docWidth);--}}
+        {{--if (docWidth <= 760) {--}}
+            {{--skrollr.init().destroy();--}}
+            {{--$('#slide_3').width(docWidth);--}}
+            {{--$('#slide-1').css({--}}
+                {{--'position': 'fixed',--}}
+                {{--'bottom': '0',--}}
+                {{--'height': '0px'--}}
+            {{--});--}}
+            {{--$('#slide-2').css({'position': 'fixed', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});--}}
+            {{--$('#slide-2 header').css({'position': 'fixed', 'top': '0px'});--}}
+            {{--$('#slide-3').css({'opacity': 1});--}}
+            {{--$('#slide-1').css({'position': 'fixed', 'bottom': '0', 'height': '0px'});--}}
+            {{--$('#slide-2').css({'position': 'fixed', 'bottom': '0'});--}}
+            {{--$('#slide-3').css({'overflow-x': 'scroll'});--}}
+            {{--$('#slide-3').css({'opacity': 1});--}}
+        {{--}--}}
+        {{--else {--}}
+            {{--skrollr.init(--}}
 
-            $('#slide_3').width(docWidth);
-            $('#slide-1').css({
-                'position': 'fixed',
-                'bottom': '0',
-                'height': '0px'
-            });
-            $('#slide-2').css({'position': 'static', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});
-            $('#slide-2 #nav').css({'position': 'static', 'top': '0px'});
-            $('#slide-3').css({'opacity': 1});
-            $('#slide-1 .bcg').css({'background': "url(/assets/img/homepage.jpg) center center 100%"});
-            $('h5').css({'display': 'none'});
-            $('#slide-3 .bcg').css({'opacity': 1});
-        }
-        else {
-            skrollr.init(
-            );
-            $body = $('body');
-            console.log($body);
+            {{--);--}}
+        {{--}--}}
+    {{--};--}}
 
-        }
 
-        $(document).ready(function () {
-            console.log('width sizing');
-            if ($(window).width() <= 767) {
-                skrollr.init().destroy();
-            }
-        });
-    }
-    ;
-    body_height = body_height/2;
-    $('body').height(h -150);
+    {{--function sizing() {--}}
+        {{--console.log(docWidth);--}}
+        {{--if (docWidth <= 760) {--}}
+            {{--skrollr.init().destroy();--}}
 
-</script>
-<script src="{{asset('/assets/js/imageloaded.js')}}"></script>
-<script src="{{ asset('/assets/js/_main.js') }}">
+            {{--$('#slide_3').width(docWidth);--}}
+            {{--$('#slide-1').css({--}}
+                {{--'position': 'fixed',--}}
+                {{--'bottom': '0',--}}
+                {{--'height': '0px'--}}
+            {{--});--}}
+            {{--$('#slide-2').css({'position': 'static', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});--}}
+            {{--$('#slide-2 #nav').css({'position': 'static', 'top': '0px'});--}}
+            {{--$('#slide-3').css({'opacity': 1});--}}
+            {{--$('#slide-1 .bcg').css({'background': "url(/assets/img/homepage.jpg) center center 100%"});--}}
+            {{--$('h5').css({'display': 'none'});--}}
+            {{--$('#slide-3 .bcg').css({'opacity': 1});--}}
+        {{--}--}}
+        {{--else {--}}
+            {{--skrollr.init(--}}
+            {{--);--}}
+            {{--$body = $('body');--}}
+            {{--console.log($body);--}}
+
+        {{--}--}}
+
+        {{--$(document).ready(function () {--}}
+            {{--console.log('width sizing');--}}
+            {{--if ($(window).width() <= 767) {--}}
+                {{--skrollr.init().destroy();--}}
+            {{--}--}}
+        {{--});--}}
+    {{--}--}}
+    {{--;--}}
+    {{--body_height = body_height/2;--}}
+    {{--$('body').height(h -150);--}}
+
+{{--</script>--}}
+<script src="{{asset('/assets/js/imagesloaded.js')}}"></script>
+<script src="{{ asset('/assets/js/main.js') }}">
 
 </script>
 

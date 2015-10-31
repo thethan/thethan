@@ -18,7 +18,7 @@
     $body = $('body');
 
     //FadeIn all sections
-    $body.imagesLoaded( function() {
+    imagesLoaded( function() {
         setTimeout(function() {
 
             // Resize sections

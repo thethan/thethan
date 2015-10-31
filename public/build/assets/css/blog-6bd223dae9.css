@@ -6824,13 +6824,15 @@ h2 {
   background: url('/assets/img/ico_loading.gif') no-repeat center center;
 }
 section {
-  /*min-width: 960px;*/
   opacity: 0;
 }
 .loaded section,
 .no-js section {
   opacity: 1;
   transition: opacity 300ms ease-out;
+}
+body {
+  overflow-x: hidden;
 }
 .bcg {
   background-position: center center;
@@ -7245,13 +7247,4 @@ dt {
 dd {
   margin-left: 30px;
   margin-bottom: 10px;
-}
-
-#nav {
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-}
-body {
-  overflow-x: hidden;
 }

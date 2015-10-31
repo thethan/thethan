@@ -33,6 +33,7 @@
     .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
         font-family: gnatfont;
     }
+
     </style>
 @endsection
 

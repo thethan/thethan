@@ -16,11 +16,42 @@
         #slide-1 .bcg {
             /*background-image: none;*/
         }
+        #slide-3 {
+            background: -webkit-linear-gradient( rgba(102,133,62,0) 0% ,rgba(102,133,62,1) 10% ); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(rgba(102,133,62,0)  0% ,rgba(102,133,62,1) 10%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(rgba(102,133,62,0)  0%,rgba(102,133,62,1) 10%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(rgba(102,133,62,0) 0% ,rgba(102,133,62,1) 10%); /* Standard syntax */
+            position: relative;
+
+        }
+        .scroll {
+            position: relative;
+            top: -11em;
+        }
+        #slide-1 {
+            padding-left:0px;
+            padding-right:0px;
+            background: rgba(102,133,62,1);
+        }
+        .homeSlide {
+            background-position: 50% 50%;
+            background-image: url(http://zach.app/assets/img/homepage.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: -webkit-linear-gradient( rgba(102,133,62,0) 0% ,rgba(102,133,62,1) 10% ); /* For Safari 5.1 to 6.0 */
+            background-color:  -o-linear-gradient(rgba(102,133,62,0)  0% ,rgba(102,133,62,1) 10%); /* For Opera 11.1 to 12.0 */
+            background-color: -moz-linear-gradient(rgba(102,133,62,0)  0%,rgba(102,133,62,1) 10%); /* For Firefox 3.6 to 15 */
+            background-color:  linear-gradient(rgba(102,133,62,0) 0% ,rgba(102,133,62,1) 10%); /* Standard syntax */
+            display: block;
+            height: 100%;
+
+        }
     </style>
     {{-- HTML5 SHim and Respond.js for IE8 Support --}}
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    
     <![endif]-->
 </head>
 <body onload="sizing()" >
@@ -47,7 +78,7 @@
         <nav class="navbar navbar-default" id="nav"
              style="margin-top: 0px;z-index: 200; "
              data-0="position:fixed; top:80%;"
-             data-150-top="top:20%;"
+             data-150-top="top:17%;"
              data-edge-strategy="set"
              data-anchor-target="#slide-2">
             <div class="container-fluid">
@@ -98,10 +129,7 @@
                  data-50p-top="top:.5em;"
                  data-top="" data-anchor-target="#slide-3">
                 <div class="hsContainer">
-                    <div class="hsContent">
-                        <h4 class="md-hidden"
-                            data-center="opacity: 0; padding:1em;" data--200-bottom="opacity: 1" data-206-top="opacity: 0; " data-106-top="opacity: 0" data-anchor-target="#slide-3 h2"> Scroll Down For More</h4>
-                    </div>
+
                 </div>
             </div>
             <div data-0="position:relative;padding-top:15em; min-height:13em;"
@@ -118,11 +146,16 @@
 
 
 </main>
-<script src="/assets/js/imageLoaded.js?v=<?php echo time();?>"></script>
+<script src="{{ elixir('assets/js/blog.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
 
 {{-- Scripts --}}
-<script src="{{ elixir('assets/js/blog.js') }}"></script>
+<script src="{{ asset('/assets/js/main.js') }}?v=<?php echo time();?>"></script>
+
 @yield('scripts')
+<script>
+
+</script>
 
 <script type="text/javascript">
 //    var io = this.io ^= 1;
@@ -136,21 +169,24 @@ $('body').css({overflowY: io ? 'scroll' : 'hidden'});
 var h = window.innerHeight;
 var w = window.innerWidth;
 var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
-console.log(w);
+console.log(h);
 console.log(docWidth);
+
 $('#slide-2').width(docWidth);
 //$('#slide-1 .hsContent').height(h).width(w);
 var body_height = $('body').height();
 console.log(body_height);
 
 imagesLoaded(document.querySelector('#slide-1'), function(){
-    console.log('all images loaded');
+  //  console.log('all images loaded');
 });
 
 window.onresize = function (event) {
     var h = window.innerHeight;
     var w = window.innerWidth;
     var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+
     $('#slide-2').width(docWidth);
     $('#slide-3').width(docWidth);
     if (docWidth <= 760) {
@@ -172,7 +208,7 @@ window.onresize = function (event) {
     }
     else {
         skrollr.init(
-                {forceheight:false}
+                {forceheight:true}
         );
     }
 };
@@ -213,7 +249,6 @@ function sizing() {
 //        });
 
 </script>
-<script src="{{ asset('/assets/js/main.js') }}?v=<?php echo time();?>"></script>
 
 
 </body>
