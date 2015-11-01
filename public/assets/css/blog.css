@@ -7193,8 +7193,8 @@ body {
 .navbar > .container .navbar-brand,
 .navbar > .container-fluid .navbar-brand {
   font-family: 'archivo_blackregular';
-  font-size: 1.5em;
-  color: #472613;
+  font-size: 3em;
+  color: #673d1a;
 }
 /*#
 slide-2 .bcg { background-repeat:repeat; background-image:url('.img/slide_2.jpg'); }
@@ -7211,14 +7211,14 @@ h6 {
   font-family: 'gnatfont';
 }
 nav.navbar-custom {
-  background: green;
   margin: 70% 0 0;
 }
 #zachHallett,
 h1 {
   font-family: 'gnatfont';
   font-weight: 400;
-  color: #472613;
+  font-size: 3em;
+  color: #65341e;
 }
 .intro-header .post-heading .meta a,
 article a {

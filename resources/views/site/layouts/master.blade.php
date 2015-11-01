@@ -16,45 +16,49 @@
         #slide-1 .bcg {
             /*background-image: none;*/
         }
+
         #slide-3 {
-            background: -webkit-linear-gradient( rgba(102,133,62,0) 0% ,rgba(102,133,62,1) 10% ); /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient(rgba(102,133,62,0)  0% ,rgba(102,133,62,1) 10%); /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient(rgba(102,133,62,0)  0%,rgba(102,133,62,1) 10%); /* For Firefox 3.6 to 15 */
-            background: linear-gradient(rgba(102,133,62,0) 0% ,rgba(102,133,62,1) 10%); /* Standard syntax */
+            background: -webkit-linear-gradient(rgba(102, 133, 62, 0) 0%, rgba(102, 133, 62, 1) 10%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(rgba(102, 133, 62, 0) 0%, rgba(102, 133, 62, 1) 10%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(rgba(102, 133, 62, 0) 0%, rgba(102, 133, 62, 1) 10%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(rgba(102, 133, 62, 0) 0%, rgba(102, 133, 62, 1) 10%); /* Standard syntax */
             position: relative;
 
         }
+
         .scroll {
             position: relative;
             top: -11em;
         }
+
         #slide-1 {
-            padding-left:0px;
-            padding-right:0px;
-            background: rgba(102,133,62,1);
+            padding-left: 0px;
+            padding-right: 0px;
+            background: rgba(102, 133, 62, 1);
         }
+
         .homeSlide {
             background-position: 50% 50%;
-            background-image: url(http://zach.app/assets/img/homepage.jpg);
+            background-image: url({!! $page->page_image !!});
             background-repeat: no-repeat;
             background-size: cover;
-            background-color: -webkit-linear-gradient( rgba(102,133,62,0) 0% ,rgba(102,133,62,1) 10% ); /* For Safari 5.1 to 6.0 */
-            background-color:  -o-linear-gradient(rgba(102,133,62,0)  0% ,rgba(102,133,62,1) 10%); /* For Opera 11.1 to 12.0 */
-            background-color: -moz-linear-gradient(rgba(102,133,62,0)  0%,rgba(102,133,62,1) 10%); /* For Firefox 3.6 to 15 */
-            background-color:  linear-gradient(rgba(102,133,62,0) 0% ,rgba(102,133,62,1) 10%); /* Standard syntax */
+            background-color: -webkit-linear-gradient(rgba(102, 133, 62, 0) 0%, rgba(102, 133, 62, 1) 10%); /* For Safari 5.1 to 6.0 */
+            background-color: -o-linear-gradient(rgba(102, 133, 62, 0) 0%, rgba(102, 133, 62, 1) 10%); /* For Opera 11.1 to 12.0 */
+            background-color: -moz-linear-gradient(rgba(102, 133, 62, 0) 0%, rgba(102, 133, 62, 1) 10%); /* For Firefox 3.6 to 15 */
+            background-color: linear-gradient(rgba(102, 133, 62, 0) 0%, rgba(102, 133, 62, 1) 10%); /* Standard syntax */
             display: block;
-            height: 100%;
 
+            height: 100%;
         }
     </style>
     {{-- HTML5 SHim and Respond.js for IE8 Support --}}
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    
+
     <![endif]-->
 </head>
-<body onload="sizing()" >
+<body onload="sizing()">
 {{--@include('blog.partials.page-nav')--}}
 
 {{--@yield('page-header')--}}
@@ -64,7 +68,7 @@
 
 <main>
     <section id="slide-1" class="container bcg"
-             style="background: url(/assets/img/homepage.jpg); position: relative;"
+             style="position: relative;"
              data-top="background-position: 50% -50px; top:0px;"
              data-top-bottom="background-position: 50% -369px; top:85px;"
             >
@@ -94,10 +98,10 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#"
-                       style="position: absolute;"
+                       style="position: absolute; margin-left:150px;"
                        data-700-top="position:fixed; top:400px;"
                             {{--data-151-top="position:absolute; top:151px;"--}}
-                       data-150-top="position:fixed;top:150px"
+                       data-150-top="position:fixed;top:180px"
                        data-anchor-target="#slide-2 #nav">{{ $title }}</a>
                 </div>
 
@@ -110,39 +114,35 @@
                         <li><a href="#">Link</a></li>
                         <li><a href="#">Link</a></li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
             <!-- /.container-fluid -->
         </nav>
 
-        <!--placeholder div to prevent jumpy content when nav gets pinned-->
-        {{--<div style=""--}}
-             {{--data-0="display:block;height:30em;background: tan;top:-13em; position: relative; z-index:15;"--}}
-             {{--data-40p-top="display:none;top:-1em"--}}
-             {{--data-anchor-target="#nav"--}}
-             {{--data-edge-strategy="set">&nbsp;</div>--}}
-
     </div>
-        <div id="slide-3" style="min-height: 600px;">
-            <div class="hidden-sm hidden-xs"
-                 data-0="position:relative;padding-top:2em;"
-                 data-50p-top="top:.5em;"
-                 data-top="" data-anchor-target="#slide-3">
-                <div class="hsContainer">
+    <div id="slide-3" style="min-height: 600px;">
+        <div class="hidden-sm hidden-xs"
+             data-0="position:relative;padding-top:2em;"
+             data-50p-top="top:.5em;"
+             data-top="" data-anchor-target="#slide-3">
+            <div class="hsContainer">
 
-                </div>
             </div>
-            <div data-0="position:relative;padding-top:15em; min-height:13em;"
-                 data-50p-top="top:.5em;"
-                 data-top=""  data-anchor-target="#slide-3">
-                <div class="hsContainer">
-                    <div class="hsContent">
-                        <h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1; "  data-anchor-target="#slide-3 h2">Master blade</h2>
-                        <p data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-anchor-target="#slide-3 h2">Here we are changing the background color from blue to black. Text is fading in at 206 pixels from the bottom and fading out 106 pixels from the top.</p>
-                    </div>
+        </div>
+        <div data-0="position:relative;padding-top:15em; min-height:13em;"
+             data-50p-top="top:.5em;"
+             data-top="" data-anchor-target="#slide-3">
+            <div class="hsContainer">
+                <div class="hsContent">
+                    <h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1; "
+                        data-anchor-target="#slide-3 h2">{{$page->title}}</h2>
+                        {{ $page->content_html  }}
+
                 </div>
             </div>
         </div>
+    </div>
 
 
 </main>
@@ -150,7 +150,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
 
 {{-- Scripts --}}
-<script src="{{ asset('/assets/js/main.js') }}?v=<?php echo time();?>"></script>
+<script src="{{ asset('/assets/js/main.js') }}"></script>
 
 @yield('scripts')
 <script>
@@ -158,95 +158,56 @@
 </script>
 
 <script type="text/javascript">
-//    var io = this.io ^= 1;
-//    $('body').css({overflowY: io ? 'scroll' : 'hidden'});
-//    var h = window.innerHeight;
-//    var w = window.innerWidth;
-//    var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
-
-var io = this.io ^= 1;
-$('body').css({overflowY: io ? 'scroll' : 'hidden'});
-var h = window.innerHeight;
-var w = window.innerWidth;
-var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
-console.log(h);
-console.log(docWidth);
-
-$('#slide-2').width(docWidth);
-//$('#slide-1 .hsContent').height(h).width(w);
-var body_height = $('body').height();
-console.log(body_height);
-
-imagesLoaded(document.querySelector('#slide-1'), function(){
-  //  console.log('all images loaded');
-});
-
-window.onresize = function (event) {
+    var io = this.io ^= 1;
+    $('body').css({overflowY: io ? 'scroll' : 'hidden'});
     var h = window.innerHeight;
     var w = window.innerWidth;
     var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
 
 
     $('#slide-2').width(docWidth);
-    $('#slide-3').width(docWidth);
-    if (docWidth <= 760) {
-        skrollr.init().destroy();
-        $('#nav').addClass(' navbar-fixed-top');
-//        $('#slide_3').width(docWidth);
-//        $('#slide-1').css({
-//            'position': 'fixed',
-//            'bottom': '0',
-//            'height': '0px'
-//        });
-//        $('#slide-2').css({'position': 'fixed', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});
-//        $('#slide-2 header').css({'position': 'fixed', 'top': '0px'});
-//        $('#slide-3').css({'opacity': 1});
-//        $('#slide-1').css({'position': 'fixed', 'bottom': '0', 'height': '0px'});
-//        $('#slide-2').css({'position': 'fixed', 'bottom': '0'});
-//        $('#slide-3').css({'overflow-x': 'scroll'});
-//        $('#slide-3').css({'opacity': 1});
-    }
-    else {
-        skrollr.init(
-                {forceheight:true}
-        );
-    }
-};
+    var body_height = $('body').height();
+    console.log(body_height);
+
+    imagesLoaded(document.querySelector('#slide-1'), function () {
+        //  console.log('all images loaded');
+    });
+
+    window.onresize = function (event) {
+        var h = window.innerHeight;
+        var w = window.innerWidth;
+        var docWidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+        $('#slide-2').width(docWidth);
+        $('#slide-3').width(docWidth);
+        if (docWidth <= 760) {
+            skrollr.init().destroy();
+            $('#nav').addClass(' navbar-fixed-top');
+            $('.homeSlide').css({'min-height':'450px'});
+        }
+        else {
+            skrollr.init(
+                    {forceheight: true}
+            );
+        }
+    };
 
 
-function sizing() {
-    console.log(docWidth);
-    if (docWidth <= 760) {
-        skrollr.init().destroy();
-        $('#nav').addClass(' navbar-fixed-top');
+    function sizing() {
+        console.log(docWidth);
+        if (docWidth <= 760) {
+            skrollr.init().destroy();
+            $('#nav').addClass(' navbar-fixed-top');
 
-//        $('#slide_3').width(docWidth);
-//        $('#slide-1').css({
-//            'position': 'fixed',
-//            'bottom': '0',
-//            'height': '0px'
-//        });
-//        $('#slide-2').css({'position': 'static', 'bottom': '0', 'height': '55%', 'overflow-y': 'scroll'});
-//        $('#slide-2 #nav').css({'position': 'static', 'top': '0px'});
-//        $('#slide-3').css({'opacity': 1});
-        $('#slide-1').css({'background': "url(/assets/img/homepage.jpg) center center 100%"});
-    }
-    else {
-        skrollr.init({
+//            $('#slide-1').css({'background': "url(/assets/img/homepage.jpg) center center 100%"});
+            $('.homeSlide').css({'min-height':'450px'});
+        }
+        else {
+            skrollr.init({
                 forceHeight: false
-            }
-        );
-
+            });
+        }
     }
-
-
-}
-
-//skrollr.init(
-//        {
-//            forceHeight: false
-//         //edgeStrategy='set'
-//        });
 
 </script>
 
